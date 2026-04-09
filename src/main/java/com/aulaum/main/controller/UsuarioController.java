@@ -4,10 +4,22 @@
  */
 package com.aulaum.main.controller;
 
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
 /**
  *
  * @author Aluno
  */
+@Controller
 public class UsuarioController {
-    
+   
+    @GetMapping("/perfil")
+    public String perfil(Model model) {
+        model.addAttribute("nome", "Felipe Souza");
+        model.addAttribute("curso", "Técnico em Desenvolvimento de Sistemas");
+        model.addAttribute("linguagemFavorita", "Java");
+        return "perfil";
+    }
 }
